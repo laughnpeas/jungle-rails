@@ -22,10 +22,18 @@
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
+          <dt>Rating</dt>
+          <dd><%= @product.avg_rating %></dd>
+          <% if current_user %>
+          <dt>Write a review</dt>
+          <dd><%= render :partial => '/reviews/form' %></dd>
+          <% end %>
+          <dt>Reviews</dt>
+          <dd><%= render :partial => '/reviews/show' %></dd>
         </dl>
       </div>
     </div>
-
   </article>
-
 </section>
+
+<%= link_to 'Back', products_path %>
